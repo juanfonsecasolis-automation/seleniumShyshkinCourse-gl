@@ -1,5 +1,8 @@
 # Taken from https://raw.githubusercontent.com/lazycoderio/Basic-Selenium-Java/master/.gitignore
 
+# selenium
+test-output/*
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
