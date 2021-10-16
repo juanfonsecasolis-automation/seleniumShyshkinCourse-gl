@@ -1,18 +1,20 @@
 package Tests;
 
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import Pages.LoginPage;
 
 public class LoginTest extends BaseTest {
 	
+	@Parameters({"username","password","expectedMessage"})
 	@Test
-	public void VerifyThatTheSystemHandlesInvalidCredentials() {
+	public void VerifyThatTheSystemHandlesInvalidCredentials(String username, String password, String expectedMessage) {
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.login("standard_user", "1234");
+		loginPage.login(username, password);
 		String currentError = loginPage.getErrorMessage();
-		Assert.assertEquals("Epic sadface: Username and password do not match any user in this service", currentError);
+		Assert.assertEquals(expectedMessage, currentError);
 	}
 	
 }
