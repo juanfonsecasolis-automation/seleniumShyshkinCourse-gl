@@ -46,5 +46,15 @@ Should be:
 ## To run the project
 Go to src/test/resources > LoginTests.xml > right-click > RunAs > TestNG suite
 
+## POM
+Advantages:
+* Operations are separated form verifications.
+* Code is re-used among classes (making TCs shorter).
+* Page object methods are user-oriented actions.
+* Easier maintenability.
+
+## PageFactory
+* One problem is that if the page contains dynamic content, the "InitElements" method might produce NPE.
+
 ## References
 * Apache. Maven, Ivy, Gradle, and SBT Artifacts. URL: https://logging.apache.org/log4j/2.x/maven-artifacts.html (last consulted on 10/16/21)

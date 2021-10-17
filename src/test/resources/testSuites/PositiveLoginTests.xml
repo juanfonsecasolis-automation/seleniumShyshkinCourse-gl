@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="PositiveTestSuite" verbose="1" parallel="tests" thread-count="4">
+
+	<test name="PositiveTest-Chrome">
+		<parameter name="username" value="standard_user"></parameter>
+		<parameter name="password" value="secret_sauce"></parameter>
+		<parameter name="expectedMessage" value="Epic sadface: Username and password do not match any user in this service"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="Tests.PositiveLoginTest">
+			</class>
+		</classes>
+	</test>
+
+</suite>
+
