@@ -29,6 +29,10 @@ Using Eclipse IDE:
 * [Linux Firefox WebDriver](https://github.com/mozilla/geckodriver/releases/tag/v0.30.0)
 * Once you have downloaded them in the src/test/resources folder make sure to assign the proper permissions using `chmod a+x <executableFilename>`.
 
+## Paralellism
+* Parallelism is configured as easy as modifiying the testng XMLs: `<suite name="NegativeTestSuite" verbose="1" parallel="tests" thread-count="4">`
+* To identify properly the logs for each thread we use Log4j instead of the console output.
+
 ## Full-stack test automation framework
 Should be:
 * Well documented
@@ -41,3 +45,6 @@ Should be:
 
 ## To run the project
 Go to src/test/resources > LoginTests.xml > right-click > RunAs > TestNG suite
+
+## References
+* Apache. Maven, Ivy, Gradle, and SBT Artifacts. URL: https://logging.apache.org/log4j/2.x/maven-artifacts.html (last consulted on 10/16/21)

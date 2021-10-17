@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="NegativeTestSuite" verbose="1">
+<suite name="NegativeTestSuite" verbose="1" parallel="tests" thread-count="4">
 
 	<test name="NegativePasswordTest-Chrome">
 		<parameter name="username" value="standard_user"></parameter>
