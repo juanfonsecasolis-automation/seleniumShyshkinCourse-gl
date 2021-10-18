@@ -25,6 +25,7 @@ public class BaseTest {
 	
 	@AfterMethod(alwaysRun = true)
 	public void TearDown() {
+		// TODO: for some reason the log4j is not working, find out why
 		logger.info("Closing driver...");
 		driver.quit();
 	}
