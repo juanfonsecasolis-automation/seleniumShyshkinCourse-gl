@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
-
-	final public static String EXPECTED_PAGE_URL = "https://www.saucedemo.com/";
 	
 	@FindBy(id="user-name")
 	WebElement usernameField;
@@ -25,11 +23,17 @@ public class LoginPage extends BasePage {
 	
 	public LoginPage(WebDriver driver, Logger logger) {
 		super(driver,logger);
-		driver.navigate().to(EXPECTED_PAGE_URL);
+		driver.navigate().to(getUrl());
 		initElements(this);
 		waitForVisibilityOf(loginLogoLocator);
 	}
 
+	public void negativeLogin(String username, String password) {
+		usernameField.sendKeys(username);
+		passwordField.sendKeys(password);
+		loginButton.click();
+	}
+	
 	public InventoryPage login(String username, String password) {
 		usernameField.sendKeys(username);
 		passwordField.sendKeys(password);
@@ -39,6 +43,10 @@ public class LoginPage extends BasePage {
 
 	public String getErrorMessage() {
 		return driver.findElement(errorDivLocator).getText();
+	}
+	
+	public String getUrl() {
+		return "https://www.saucedemo.com/";
 	}
 	
 }

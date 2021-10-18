@@ -8,13 +8,16 @@ import org.openqa.selenium.support.FindBy;
 
 public class InventoryPage extends BasePage {
 
-	final public static String EXPECTED_PAGE_URL = "https://www.saucedemo.com/";
 	By appLogoLocator = By.cssSelector(".app_logo");
 	
 	public InventoryPage(WebDriver driver, Logger logger) {
 		super(driver,logger);
 		initElements(this);
 		waitForVisibilityOf(appLogoLocator);
+	}
+	
+	public String getUrl() {
+		return "https://www.saucedemo.com/inventory.html";
 	}
 	
 }

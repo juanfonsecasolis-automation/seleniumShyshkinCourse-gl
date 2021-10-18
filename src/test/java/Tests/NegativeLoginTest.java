@@ -14,7 +14,7 @@ public class NegativeLoginTest extends BaseTest {
 		LoginPage loginPage = new LoginPage(driver, logger);
 		
 		// Act
-		loginPage.login(username, password);
+		loginPage.negativeLogin(username, password);
 		String currentError = loginPage.getErrorMessage();
 		
 		// Assert

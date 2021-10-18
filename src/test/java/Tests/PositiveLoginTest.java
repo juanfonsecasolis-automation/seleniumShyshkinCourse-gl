@@ -19,7 +19,7 @@ public class PositiveLoginTest extends BaseTest{
 		InventoryPage inventoryPage = loginPage.login(username, password);
 		
 		// Assert
-		Assert.assertEquals(inventoryPage.EXPECTED_PAGE_URL, inventoryPage.getUrl());
+		Assert.assertEquals(inventoryPage.getUrl(), inventoryPage.getCurrentUrl());
 	}
 	
 }

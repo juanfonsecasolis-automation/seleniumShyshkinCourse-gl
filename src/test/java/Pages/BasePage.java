@@ -28,8 +28,10 @@ public abstract class BasePage {
 			.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 	}
 	
-	public String getUrl() {
+	public String getCurrentUrl() {
 		return driver.getCurrentUrl();
 	}
+	
+	public abstract String getUrl();
 	
 }
