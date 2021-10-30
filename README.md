@@ -40,7 +40,7 @@ Using Eclipse IDE:
 
 ## 4 Theory
 
-## 4.1 Full-stack test automation framework
+### 4.1 Full-stack test automation framework
 Should be:
 * Well documented
 * Fully tested (never trust the test that never fails)
@@ -50,14 +50,14 @@ Should be:
 * Parallel testing
 * Extendable and customizable
 
-## 4.2 POM
+### 4.2 POM
 Advantages:
 * Operations are separated form verifications.
 * Code is re-used among classes (making TCs shorter).
 * Page object methods are user-oriented actions.
 * Easier maintenability.
 
-## PageFactory
+### 4.3 PageFactory
 * One problem is that if the page contains dynamic content, the "InitElements" method might produce NPE.
 
 ## 5 References
