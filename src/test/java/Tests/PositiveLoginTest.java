@@ -14,9 +14,11 @@ public class PositiveLoginTest extends BaseTest{
 	public void VerifyThatTheSystemHandlesValidCredentials(String username, String password) {
 		// Arrange
 		LoginPage loginPage = new LoginPage(driver, logger);
+		TakeSnapshot("LoginPageOpened");
 		
 		// Act
 		InventoryPage inventoryPage = loginPage.login(username, password);
+		TakeSnapshot("InventoryPageOpened");
 		
 		// Assert
 		Assert.assertEquals(inventoryPage.getUrl(), inventoryPage.getCurrentUrl());
