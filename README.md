@@ -62,3 +62,6 @@ Advantages:
 
 ## 5 References
 * Apache. Maven, Ivy, Gradle, and SBT Artifacts. URL: https://logging.apache.org/log4j/2.x/maven-artifacts.html (last consulted on 10/16/21).
+* MVNRepository. REST Assured. URL: https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+* https://medium.com/aeturnuminc/getting-started-with-rest-assured-a087d806b4ec
+* https://stackoverflow.com/questions/49120056/restassured-cant-find-the-equalto-method/49127207

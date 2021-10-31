@@ -1,4 +1,4 @@
-package Tests;
+package testsUI;
 
 import java.io.File;
 import java.io.IOException;
