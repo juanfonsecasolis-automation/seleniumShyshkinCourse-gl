@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="PositiveTestSuite" verbose="1" parallel="tests" thread-count="4">
+
+	<test name="PositiveTest-API">
+		<classes>
+			<class name="testsAPI.APITest">
+			</class>
+		</classes>
+	</test>
+
+</suite>
+

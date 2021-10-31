@@ -8,7 +8,7 @@
 		<parameter name="expectedMessage" value="Epic sadface: Username and password do not match any user in this service"></parameter>
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="Tests.NegativeLoginTest">
+			<class name="testsUI.NegativeLoginTest">
 			</class>
 		</classes>
 	</test>
@@ -19,7 +19,7 @@
 		<parameter name="expectedMessage" value="Epic sadface: Username and password do not match any user in this service"></parameter>
 		<parameter name="browser" value="firefox"></parameter>
 		<classes>
-			<class name="Tests.NegativeLoginTest">
+			<class name="testsUI.NegativeLoginTest">
 			</class>
 		</classes>
 	</test>
