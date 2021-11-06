@@ -6,10 +6,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
-import static org.hamcrest.Matchers.equalTo;
+import io.restassured.response.Response;
+
+import org.hamcrest.Matchers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import java.util.regex.Matcher;
 
 public class APITest extends RestAssured{
 	
@@ -33,8 +34,8 @@ public class APITest extends RestAssured{
 		.when()
 		.get("https://reqres.in/api/users?delay=3")
 		.then()
-		.body("per_page", equalTo(6))
-		.body("data.size()", equalTo(6));
+		.body("per_page", Matchers.equalTo(6))
+		.body("data.size()", Matchers.equalTo(6));
 	}	
 	
 	@Test
@@ -43,11 +44,11 @@ public class APITest extends RestAssured{
 		.when()
 		.get("https://reqres.in/api/users?delay=3")
 		.then()
-		.body("data[0].id", equalTo(1))
-		.body("data[0].email", equalTo("george.bluth@reqres.in"))
-		.body("data[0].first_name", equalTo("George"))
-		.body("data[0].last_name", equalTo("Bluth"))
-		.body("data[0].avatar", equalTo("https://reqres.in/img/faces/1-image.jpg"));
+		.body("data[0].id", Matchers.equalTo(1))
+		.body("data[0].email", Matchers.equalTo("george.bluth@reqres.in"))
+		.body("data[0].first_name", Matchers.equalTo("George"))
+		.body("data[0].last_name", Matchers.equalTo("Bluth"))
+		.body("data[0].avatar", Matchers.equalTo("https://reqres.in/img/faces/1-image.jpg"));
 	}	
 	
 	@Test
@@ -56,11 +57,25 @@ public class APITest extends RestAssured{
 		.when()
 		.get("https://reqres.in/api/users?delay=3")
 		.then()
-		.body("data[0].email", equalTo("george.bluth@reqres.in"));
+		.body("data[0].email", Matchers.equalTo("george.bluth@reqres.in"));
+	}
+	
+	@Test
+	public void VerifyUsersCanbeCreatedUsingPost() { 
+		// Arrange
+		String name = "cypress_test", job = "tester";
 		
-		//Pattern pattern = Pattern.compile("w3schools", Pattern.CASE_INSENSITIVE);
-	    //Matcher matcher = pattern.matcher("Visit W3Schools!");
-	    //boolean matchFound = matcher.find();
+		// Act
+		Response response = 
+			given().body(String.format("{'name':'%s', 'job':'%s'}", name, job))
+			.when()
+			.request("POST", "https://reqres.in/api/users")
+			.then().extract().response();
+		System.out.println(response.asPrettyString());
+		
+		// Assert
+		org.testng.Assert.assertTrue(0 < Integer.parseInt((String)response.path("id")));
+		org.testng.Assert.assertTrue(!((String)response.path("createdAt")).equals(""));
 	}	
 	
 }
