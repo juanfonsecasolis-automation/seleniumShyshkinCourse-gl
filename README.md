@@ -65,5 +65,5 @@ Advantages:
 * MVNRepository. REST Assured. URL: https://mvnrepository.com/artifact/io.rest-assured/rest-assured
 * RestAssured. GettingStarted. URL: https://github.com/rest-assured/rest-assured/wiki/GettingStarted
 * RestAssured. Usage. URL: https://github.com/rest-assured/rest-assured/wiki/Usage
-* https://medium.com/aeturnuminc/getting-started-with-rest-assured-a087d806b4ec
-* https://stackoverflow.com/questions/49120056/restassured-cant-find-the-equalto-method/49127207
+* Hansani Jayasekara. Getting started with REST Assured. Aeturnum, Medium. ULR: https://medium.com/aeturnuminc/getting-started-with-rest-assured-a087d806b4ec
+* Tools QA. Validate Response Status using Rest Assured. URL: https://www.toolsqa.com/rest-assured/validate-response-status-using-rest-assured/
