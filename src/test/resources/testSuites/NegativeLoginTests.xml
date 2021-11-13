@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<suite name="NegativeTestSuite" verbose="1" parallel="tests" thread-count="4">
+<suite name="NegativeLoginTestSuite" verbose="1" parallel="tests" thread-count="4">
 
-	<test name="NegativePasswordTest-Chrome">
+	<test name="NegativeLoginPasswordTest-Chrome">
 		<parameter name="username" value="standard_user"></parameter>
 		<parameter name="password" value="123456"></parameter>
 		<parameter name="expectedMessage" value="Epic sadface: Username and password do not match any user in this service"></parameter>
@@ -13,7 +13,7 @@
 		</classes>
 	</test>
 	
-	<test name="NegativePasswordTest-Firefox">
+	<test name="NegativeLoginPasswordTest-Firefox">
 		<parameter name="username" value="standard_user"></parameter>
 		<parameter name="password" value="123456"></parameter>
 		<parameter name="expectedMessage" value="Epic sadface: Username and password do not match any user in this service"></parameter>

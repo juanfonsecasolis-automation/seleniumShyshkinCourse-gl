@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="InventoryTestSuite" verbose="1" parallel="tests" thread-count="4">
+
+	<test name="InventoryTest-Chrome">
+		<parameter name="username" value="standard_user"></parameter>
+		<parameter name="password" value="secret_sauce"></parameter>
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="testsUI.InventoryTests">
+			</class>
+		</classes>
+	</test>
+
+</suite>
+
