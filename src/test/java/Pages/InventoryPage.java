@@ -28,5 +28,9 @@ public class InventoryPage extends BasePage {
 	public List<WebElement> getInventoryItems() {
 		return inventoryItems;
 	}
+
+	public WebElement getAddCartButton(WebElement item) {
+		return item.findElement(By.xpath(".//button"));
+	}
 	
 }
