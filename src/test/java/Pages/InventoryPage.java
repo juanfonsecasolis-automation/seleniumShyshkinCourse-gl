@@ -58,5 +58,9 @@ public class InventoryPage extends BasePage {
 		shoppingCartBadgeDiv.click();
 		return new CartPage(driver, logger);
 	}
+
+	public String getItemName(WebElement webElement) {
+		return webElement.findElement(By.xpath(".//div[@class='inventory_item_label']/a")).getText();
+	}
 	
 }

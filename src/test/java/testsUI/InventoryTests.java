@@ -62,6 +62,8 @@ public class InventoryTests extends BaseTest{
 	@Parameters({"username","password"})
 	@Test
 	public void VerifyItemsCanBeAddedToTheCart(String username, String password) {
+		
+		String[] expectedNames = new String[2];
 		LoginPage loginPage = new LoginPage(driver, logger);
 		InventoryPage inventoryPage = loginPage.login(username, password);
 		List<WebElement> items = inventoryPage.getInventoryItems();
@@ -69,11 +71,16 @@ public class InventoryTests extends BaseTest{
 		inventoryPage.getAddCartButton(items.get(0)).click();
 		inventoryPage.getAddCartButton(items.get(1)).click();
 		
-		CartPage cartPage = inventoryPage.openCart();
-		List<String> addedNames = cartPage.getAddedItemsNames();
+		expectedNames[0] = inventoryPage.getItemName(items.get(0));
+		expectedNames[1] = inventoryPage.getItemName(items.get(1));
 		
-		Assert.assertTrue(addedNames.contains(items.get(0).getText()));
-		Assert.assertTrue(addedNames.contains(items.get(1).getText()));
+		CartPage cartPage = inventoryPage.openCart();
+		List<String> currentNames = cartPage.getAddedItemsNames();
+		
+		for(String expectedName : expectedNames) {
+			Assert.assertTrue(currentNames.contains(expectedName));
+		}
+		
 	}
 	
 }
