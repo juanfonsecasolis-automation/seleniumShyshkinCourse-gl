@@ -17,6 +17,9 @@ public class InventoryPage extends BasePage {
 	@FindBy(css=".product_sort_container")
 	WebElement orderByDropdown;
 	
+	@FindBy(css=".shopping_cart_badge")
+	WebElement shoppingCartBadgeDiv;
+	
 	By appLogoLocator = By.cssSelector(".app_logo");
 	
 	public InventoryPage(WebDriver driver, Logger logger) {
@@ -45,6 +48,15 @@ public class InventoryPage extends BasePage {
 	public double getPrice(WebElement webElement) {
 		String rawPrice = webElement.findElement(By.className("inventory_item_price")).getText();
 		return Double.parseDouble(rawPrice.replace("$", ""));
+	}
+
+	public WebElement getShoppingCartBadge() {
+		return shoppingCartBadgeDiv;
+	}
+
+	public CartPage openCart() {
+		shoppingCartBadgeDiv.click();
+		return new CartPage(driver, logger);
 	}
 	
 }
