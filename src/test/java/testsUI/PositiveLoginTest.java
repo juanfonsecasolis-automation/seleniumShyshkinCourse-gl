@@ -10,7 +10,7 @@ import Pages.LoginPage;
 public class PositiveLoginTest extends BaseTest{
 
 	@Parameters({"username","password"})
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyThatTheSystemHandlesValidCredentials(String username, String password) {
 		// Arrange
 		LoginPage loginPage = new LoginPage(driver, logger);

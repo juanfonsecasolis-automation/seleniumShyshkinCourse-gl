@@ -14,7 +14,6 @@ import Pages.LoginPage;
 public class InventoryTests extends BaseTest{
 
 	@Parameters({"username","password"})
-	@Test
 	public void VerifyOnlySixItemsAreDisplayedInTheProductsWebpage(String username, String password) {
 		LoginPage loginPage = new LoginPage(driver, logger);
 		InventoryPage inventoryPage = loginPage.login(username, password);
@@ -60,7 +59,7 @@ public class InventoryTests extends BaseTest{
 	}
 	
 	@Parameters({"username","password"})
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyItemsCanBeAddedToTheCart(String username, String password) {
 		
 		String[] expectedNames = new String[2];
