@@ -29,7 +29,7 @@ public class BaseTest {
 	protected String testMethodName;
 	
 	@Parameters({ "browser" })
-	@BeforeMethod(alwaysRun = true)
+	@BeforeMethod(alwaysRun = true)	// this is a hook
 	public void SetUp(Method method, String browser, ITestContext ctx) {
 		String testName = ctx.getCurrentXmlTest().getName();
 		logger = LogManager.getLogger(testName);
@@ -39,7 +39,7 @@ public class BaseTest {
 		testMethodName = method.getName();
 	}
 	
-	@AfterMethod(alwaysRun = true)
+	@AfterMethod(alwaysRun = true)	// this is a hook
 	public void TearDown() {
 		// TODO: for some reason the log4j is not working, find out why
 		logger.info("Closing driver...");

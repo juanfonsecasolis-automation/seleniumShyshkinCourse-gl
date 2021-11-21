@@ -67,3 +67,4 @@ Advantages:
 * RestAssured. Usage. URL: https://github.com/rest-assured/rest-assured/wiki/Usage
 * Hansani Jayasekara. Getting started with REST Assured. Aeturnum, Medium. ULR: https://medium.com/aeturnuminc/getting-started-with-rest-assured-a087d806b4ec
 * Tools QA. Validate Response Status using Rest Assured. URL: https://www.toolsqa.com/rest-assured/validate-response-status-using-rest-assured/
+* Guru99. TestNG Groups: Include, Exclude with Example – Selenium Tutorial. URL: https://www.guru99.com/introduction-testng-groups.html
