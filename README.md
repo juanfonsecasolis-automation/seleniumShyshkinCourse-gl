@@ -69,3 +69,4 @@ Advantages:
 * Tools QA. Validate Response Status using Rest Assured. URL: https://www.toolsqa.com/rest-assured/validate-response-status-using-rest-assured/
 * Guru99. TestNG Groups: Include, Exclude with Example – Selenium Tutorial. URL: https://www.guru99.com/introduction-testng-groups.html
 * TechWorld with Nana. Run Jenkins in Docker Container - Jenkins Pipeline Tutorial for Beginners 1/4. URL: https://youtu.be/pMO26j2OUME
+* Jenkins.io. Docker. URL: https://www.jenkins.io/doc/book/installing/docker/
