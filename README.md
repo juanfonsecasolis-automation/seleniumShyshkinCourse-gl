@@ -61,18 +61,24 @@ Advantages:
 * One problem is that if the page contains dynamic content, the "InitElements" method might produce NPE.
 
 ## 5 Jenkins on Docker
-Based on [8, 9]:
+Based on [8, 9], the initial setup is:
 ```
-docker image pull jenkins/jenkins:lts
+docker build -t jenkins .
+docker image pull jenkins
 docker volume create jenkinsvol1
-docker container run -d -p 8080:8080 -v jenkinsvol1:/var/jenkins_home --name jenkins-local jenkins/jenkins:lts
+docker container run -d -p 8080:8080 -v jenkinsvol1:/var/jenkins_home --name jenkins-local jenkins
 docker ps
 docker container exec <containerId> sh -c "cat /var/jenkins_home/secrets/initialAdminPassword"
-# copy the password (e.g. b277537a477245f596687becb194fd93) and access jenkins on http://localhost:8080
+// copy the password (e.g. b277537a477245f596687becb194fd93) and access jenkins on http://localhost:8080
+// install default plugins and configure a task to clone the git repository and run mvn clean test
+```
+
+To restore previously created containers:
+```
 docker container kill <containerId>
 docker container rm <containerId>
-# now run the same "docker container run..." defined above
-# go to https://localhost:8080, it should work again with all the same configurations restored
+// now run the same "docker container run..." defined above
+// go to https://localhost:8080, it should work again with all the same configurations restored
 ```
 
 ## 6 References
