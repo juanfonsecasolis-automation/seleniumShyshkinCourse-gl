@@ -8,7 +8,6 @@ import Pages.LoginPage;
 public class NegativeLoginTest extends BaseTest {
 	
 	@Parameters({"username","password","expectedMessage"})
-	@Test
 	public void VerifyThatTheSystemHandlesInvalidCredentials(String username, String password, String expectedMessage) {
 		// Arrange
 		LoginPage loginPage = new LoginPage(driver, logger);

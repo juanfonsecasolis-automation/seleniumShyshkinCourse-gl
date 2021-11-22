@@ -11,7 +11,7 @@
 			</run>
 		</groups>
 		<classes>
-			<class name="testsUI.PositiveLoginTest"/>
+			<class name="testsAPI.APITests"/>
 			<class name="testsUI.InventoryTests"/>
 		</classes>
 	</test>

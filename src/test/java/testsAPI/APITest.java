@@ -31,7 +31,7 @@ public class APITest extends RestAssured{
 		logger.info("Closing driver...");
 	}
 	
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyPaginationReturnsTheSameNumberOfItemsSpecifiedOnThePerPageProperty() {
 		given()
 		.when()

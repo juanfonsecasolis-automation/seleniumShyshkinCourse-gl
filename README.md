@@ -60,13 +60,28 @@ Advantages:
 ### 4.3 PageFactory
 * One problem is that if the page contains dynamic content, the "InitElements" method might produce NPE.
 
-## 5 References
-* Apache. Maven, Ivy, Gradle, and SBT Artifacts. URL: https://logging.apache.org/log4j/2.x/maven-artifacts.html (last consulted on 10/16/21).
-* MVNRepository. REST Assured. URL: https://mvnrepository.com/artifact/io.rest-assured/rest-assured
-* RestAssured. GettingStarted. URL: https://github.com/rest-assured/rest-assured/wiki/GettingStarted
-* RestAssured. Usage. URL: https://github.com/rest-assured/rest-assured/wiki/Usage
-* Hansani Jayasekara. Getting started with REST Assured. Aeturnum, Medium. ULR: https://medium.com/aeturnuminc/getting-started-with-rest-assured-a087d806b4ec
-* Tools QA. Validate Response Status using Rest Assured. URL: https://www.toolsqa.com/rest-assured/validate-response-status-using-rest-assured/
-* Guru99. TestNG Groups: Include, Exclude with Example – Selenium Tutorial. URL: https://www.guru99.com/introduction-testng-groups.html
-* TechWorld with Nana. Run Jenkins in Docker Container - Jenkins Pipeline Tutorial for Beginners 1/4. URL: https://youtu.be/pMO26j2OUME
-* Jenkins.io. Docker. URL: https://www.jenkins.io/doc/book/installing/docker/
+## 5 Jenkins on Docker
+Based on [8, 9]:
+```
+docker image pull jenkins/jenkins:lts
+docker volume create jenkinsvol1
+docker container run -d -p 8080:8080 -v jenkinsvol1:/var/jenkins_home --name jenkins-local jenkins/jenkins:lts
+docker ps
+docker container exec <containerId> sh -c "cat /var/jenkins_home/secrets/initialAdminPassword"
+# copy the password (e.g. b277537a477245f596687becb194fd93) and access jenkins on http://localhost:8080
+docker container kill <containerId>
+docker container rm <containerId>
+# now run the same "docker container run..." defined above
+# go to https://localhost:8080, it should work again with all the same configurations restored
+```
+
+## 6 References
+1. Apache. Maven, Ivy, Gradle, and SBT Artifacts. URL: https://logging.apache.org/log4j/2.x/maven-artifacts.html (last consulted on 10/16/21).
+2. MVNRepository. REST Assured. URL: https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+3. RestAssured. GettingStarted. URL: https://github.com/rest-assured/rest-assured/wiki/GettingStarted
+4. RestAssured. Usage. URL: https://github.com/rest-assured/rest-assured/wiki/Usage
+5. Hansani Jayasekara. Getting started with REST Assured. Aeturnum, Medium. ULR: https://medium.com/aeturnuminc/getting-started-with-rest-assured-a087d806b4ec
+6. Tools QA. Validate Response Status using Rest Assured. URL: https://www.toolsqa.com/rest-assured/validate-response-status-using-rest-assured/
+7. Guru99. TestNG Groups: Include, Exclude with Example – Selenium Tutorial. URL: https://www.guru99.com/introduction-testng-groups.html
+8. TechWorld with Nana. Run Jenkins in Docker Container - Jenkins Pipeline Tutorial for Beginners 1/4. URL: https://youtu.be/pMO26j2OUME
+9. Rangle.io. Running Jenkins and Persisting state locally using Docker. URL: https://rangle.io/blog/running-jenkins-and-persisting-state-locally-using-docker-2/
