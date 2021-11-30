@@ -12,7 +12,7 @@ public class DriverFactory {
 	public static WebDriver getDriver(String browser, Logger logger) {
 		WebDriver driver;
 		logger.info(String.format("Initializing driver for %s...", browser));
-		String[] options = new String[]{}; // {"--headless"};
+		String[] options = new String[]{"--headless"};
 		if(browser.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
 			ChromeOptions options1 = new ChromeOptions();

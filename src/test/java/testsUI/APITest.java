@@ -1,4 +1,4 @@
-package testsAPI;
+package testsUI;
 
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -42,7 +42,7 @@ public class APITest extends RestAssured{
 		.body("data.size()", Matchers.equalTo(6));
 	}	
 	
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyThatEachUserReturnedContainsPersonalInformation () {
 		given()
 		.when()
@@ -56,7 +56,7 @@ public class APITest extends RestAssured{
 		.body("data[0].avatar", Matchers.equalTo("https://reqres.in/img/faces/1-image.jpg"));
 	}	
 	
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyThatTheEachEmailFollowsTheFormatExpected() {
 		
 		Response response = given()
@@ -69,7 +69,7 @@ public class APITest extends RestAssured{
 		org.testng.Assert.assertTrue(emailPattern.matcher(email).find());
 	}
 	
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyUsersCanbeCreatedUsingPost() { 
 		// Arrange
 		String name = "cypress_test", job = "tester";
@@ -88,7 +88,7 @@ public class APITest extends RestAssured{
 		org.testng.Assert.assertTrue(!((String)response.path("createdAt")).equals(""));
 	}	
 	
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyUserInformationCanBePartiallyUpdated() { 
 		// Arrange
 		String name = "cypress_test";
@@ -106,7 +106,7 @@ public class APITest extends RestAssured{
 		org.testng.Assert.assertTrue(!((String)response.path("updatedAt")).equals(""));
 	}	
 	
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyUserInformationCanBeReplaced() { 
 		// Arrange
 		String name = "cypress_test", job = "job_updated";
@@ -124,7 +124,7 @@ public class APITest extends RestAssured{
 		org.testng.Assert.assertTrue(!((String)response.path("updatedAt")).equals(""));
 	}	
 	
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyUserCanBeDeleted() { 
 		when()
 		.request("DELETE", "https://reqres.in/api/users/0")

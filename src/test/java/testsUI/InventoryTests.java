@@ -21,7 +21,7 @@ public class InventoryTests extends BaseTest{
 	}
 	
 	@Parameters({"username","password"})
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyAllItemsInTheInventoryPageHaveAnAddToCartButton(String username, String password) {
 		LoginPage loginPage = new LoginPage(driver, logger);
 		InventoryPage inventoryPage = loginPage.login(username, password);
@@ -34,7 +34,7 @@ public class InventoryTests extends BaseTest{
 	}
 	
 	@Parameters({"username","password"})
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyThatTheSystemArrangesItemByPriceFromLowToHigh(String username, String password) {
 		LoginPage loginPage = new LoginPage(driver, logger);
 		InventoryPage inventoryPage = loginPage.login(username, password);
@@ -46,7 +46,7 @@ public class InventoryTests extends BaseTest{
 	}
 	
 	@Parameters({"username","password"})
-	@Test
+	@Test(groups = {"acceptance"})
 	public void VerifyThatTheCartBadgeReflectsTheNumberOfItemsAddedInTheCart(String username, String password) {
 		LoginPage loginPage = new LoginPage(driver, logger);
 		InventoryPage inventoryPage = loginPage.login(username, password);

@@ -11,8 +11,9 @@
 			</run>
 		</groups>
 		<classes>
+			<class name="testsUI.APITest"/>
+			<class name="testsUI.PositiveLoginTest"/>
 			<class name="testsUI.InventoryTests"/>
-			<!--class name="testsAPI.APITests"/-->
 		</classes>
 	</test>
 </suite>
